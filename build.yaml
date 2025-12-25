@@ -19,11 +19,7 @@
 #
 ---
 include:
-  - board: nrfmicro_11
+  - board: nice_nano
     shield: sofle_left
-  - board: nrfmicro_11
+  - board: nice_nano
     shield: sofle_right
-  - board: nice_nano
-    shield: sofle_left1
-  - board: nice_nano
-    shield: sofle_right1
