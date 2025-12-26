@@ -26,6 +26,13 @@
         };
     };
 
+      behaviors {
+        rgb_encoder: rgb_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
+        };
+    };
 
 
     keymap {
@@ -47,7 +54,7 @@
                  &kp LGUI &kp LALT &kp LCTRL &mo LOWER  &kp RET    &kp SPACE  &mo RAISE  &kp RCTRL &kp RALT  &kp RGUI
             >;
 
-            sensor-bindings = <&inc_dec_kp RGB_HUI RGB_HUD &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp <&rgb_encoder> &inc_dec_kp PG_UP PG_DN>;
         };
 
         lower_layer {
