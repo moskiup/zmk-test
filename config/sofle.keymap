@@ -26,6 +26,16 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+        combo_unlock {
+            timeout-ms = <100>;
+            key-positions = <0 1 2>;
+            bindings = <&studio_unlock>;
+            layers = <BASE>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
