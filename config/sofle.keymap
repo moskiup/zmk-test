@@ -16,10 +16,6 @@
 #define ADJUST 3
 
 / {
-    &led_strip {
-        chain-length = <10>;
-    };
-    
    // Activate ADJUST layer by pressing raise and lower
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -118,4 +114,8 @@
         };
 
     };
+};
+
+&led_strip {
+    chain-length = <10>;
 };
