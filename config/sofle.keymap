@@ -16,6 +16,9 @@
 #define ADJUST 3
 
 / {
+
+
+
    // Activate ADJUST layer by pressing raise and lower
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -25,13 +28,17 @@
         };
     };
 
+
+
     behaviors {
         rgb_encoder: rgb_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&rgb_ug RGB_HUI>, <&rgb_ug RGB_HUD>;
         };
+        
     };
+
 
     keymap {
         compatible = "zmk,keymap";
@@ -114,7 +121,6 @@
         };
 
     };
-};
 
 &led_strip {
     chain-length = <10>;
