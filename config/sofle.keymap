@@ -18,7 +18,6 @@
 / {
 
 
-
    // Activate ADJUST layer by pressing raise and lower
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -28,6 +27,25 @@
         };
     };
 
+    macros {
+         macro_copy: macro_copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(C)>;
+        };
+
+         macro_paste: macro_paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(V)>;
+        };
+
+         macro_cut: macro_cut {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(X)>;
+        };
+    };
 
 
     behaviors {
@@ -64,23 +82,6 @@
             bindings = <&macro_cut>, <&kp X>;
         };
 
-         macro_copy: macro_copy {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(C)>;
-        };
-
-         macro_paste: macro_paste {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(V)>;
-        };
-
-         macro_cut: macro_cut {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(X)>;
-        };
 
 
          n_key: n_key {
