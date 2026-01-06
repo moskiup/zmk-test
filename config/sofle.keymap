@@ -38,7 +38,7 @@
             press-bindings = <&rgb_ug RGB_TOG>;
         };
 
-        arrows_encoder : arrows_encoder {
+        arrows_encoder: arrows_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&kp UP>, <&kp DOWN>;
