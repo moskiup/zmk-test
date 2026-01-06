@@ -35,6 +35,113 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&rgb_ug RGB_HUI>, <&rgb_ug RGB_HUD>;
+            press-bindings = <&rgb_ug RGB_TOG>;
+        };
+
+        arrows_encoder : arrows_encoder {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp UP>, <&kp DOWN>;
+            press-bindings = <&kp LGUI>;
+        };
+
+         c_copy: c_copy {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&macro_copy>, <&kp C>;
+        };
+
+         v_paste: v_paste {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&macro_paste>, <&kp V>;
+        };
+
+         x_cut: x_cut {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&macro_cut>, <&kp X>;
+        };
+
+         macro_copy: macro_copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(C)>;
+        };
+
+         macro_paste: macro_paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(V)>;
+        };
+
+         macro_cut: macro_cut {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(X)>;
+        };
+
+
+         n_key: n_key {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp N>, <&kp LS(N)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+         tilde_key: tilde_key {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SEMI>, <&kp LS(SEMI)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+         td_n_nye: tap_dance_n_nye {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&n_key>, <&tilde_key>;
+        };
+
+         n_tilde_morph: n_tilde_morph {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SEMI>, <&kp LS(SEMI)>; // minúscula (ñ) y MAYÚSCULA (Ñ)
+            mods = <(MOD_LSFT|MOD_RSFT)>;         // se activa con Shift izquierdo o derecho
+        };
+
+    
+    };
+
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <13 14>;
+            bindings = <&kp ESC>;
+        };
+        combo_grave_1_base {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&sl BASE>;
+        };
+        combo_grave_2_lower {
+            timeout-ms = <50>;
+            key-positions = <0 2>;
+            bindings = <&sl LOWER>;
+        };
+        combo_grave_3_raise {
+            timeout-ms = <50>;
+            key-positions = <0 3>;
+            bindings = <&sl RAISE>;
+        };
+        combo_grave_4_adjust {
+            timeout-ms = <50>;
+            key-positions = <0 4>;
+            bindings = <&sl ADJUST>;
         };
     };
 
@@ -54,12 +161,12 @@
             bindings = <
 &kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &none
 &kp ESC   &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &kp BSPC
-&kp TAB   &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
-&kp LSHFT &kp Z  &kp X    &kp C    &kp V     &kp B      &kp C_MUTE &none      &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-                 &kp LGUI &kp LALT &kp LCTRL &mo LOWER  &kp RET    &kp SPACE  &mo RAISE  &kp RCTRL &kp RALT  &kp RGUI
+&kp TAB   &kp A  &kp S    &kp D    &kp F     &kp G                      2      &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
+&sk LSHFT &kp Z  &x_cut    &c_copy    &v_paste     &kp B      &kp &none      &td_n_nye  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp CAPS
+                 &kp LGUI &kp LALT &kp LCTRL &mo LOWER  &kp SPACE    &kp RET  & mo RAISE  &sk RCTRL &kp RALT  &kp RGUI
             >;
 
-            sensor-bindings = <&rgb_encoder &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&arrows_encoder &inc_dec_kp PG_UP PG_DN>;
         };
 
         lower_layer {
@@ -79,7 +186,7 @@
                     &trans    &trans      &trans    &trans     &trans &trans  &trans    &trans   &trans    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp UP DOWN>;
         };
 
         raise_layer {
@@ -121,3 +228,4 @@
     };
 };
 
+1
