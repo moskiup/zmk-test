@@ -35,14 +35,12 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&rgb_ug RGB_HUI>, <&rgb_ug RGB_HUD>;
-            press-bindings = <&rgb_ug RGB_TOG>;
         };
 
         arrows_encoder: arrows_encoder {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&kp UP>, <&kp DOWN>;
-            press-bindings = <&kp LGUI>;
         };
 
          c_copy: c_copy {
@@ -113,7 +111,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;         // se activa con Shift izquierdo o derecho
         };
 
-    
     };
 
     combos {
@@ -162,7 +159,7 @@
 &kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &none
 &kp ESC   &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &kp BSPC
 &kp TAB   &kp A  &kp S    &kp D    &kp F     &kp G                            &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
-&sk LSHFT &kp Z  &x_cut    &c_copy    &v_paste     &kp B   &none  &none      &td_n_nye  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp CAPS
+&sk LSHFT &kp Z  &x_cut    &c_copy    &v_paste     &kp B   &kp MUTE &kp RGUI  &td_n_nye  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp CAPS
                  &kp LGUI &kp LALT &kp LCTRL &mo LOWER  &kp SPACE    &kp RET  & mo RAISE  &sk RCTRL &kp RALT  &kp RGUI
             >;
 
