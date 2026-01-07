@@ -35,22 +35,22 @@
             bindings = <&kp ESC>;
         };
         combo_grave_1_base {
-            timeout-ms = <100>;
+            timeout-ms = <300>;
             key-positions = <0 1>;
             bindings = <&to BASE>;
         };
         combo_grave_2_lower {
-            timeout-ms = <100>;
+            timeout-ms = <300>;
             key-positions = <0 2>;
             bindings = <&to LOWER>;
         };
         combo_grave_3_raise {
-            timeout-ms = <100>;
+            timeout-ms = <300>;
             key-positions = <0 3>;
             bindings = <&to RAISE>;
         };
         combo_grave_4_adjust {
-            timeout-ms = <100>;
+            timeout-ms = <300>;
             key-positions = <0 4>;
             bindings = <&to ADJUST>;
         };
