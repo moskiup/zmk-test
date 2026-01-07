@@ -66,11 +66,11 @@
             bindings = <&rgb_ug RGB_HUI>, <&rgb_ug RGB_HUD>;
         };
 
-        td0: tap_dance_0 {
+        td0:  SHIFT_SMART {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp N1>, <&caps_word>;
+            bindings = <&kp LSHIFT>, <&caps_word>;
         };
 
     };
