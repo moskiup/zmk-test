@@ -30,29 +30,29 @@
     combos {
         compatible = "zmk,combos";
         combo_esc {
-            timeout-ms = <50>;
+            timeout-ms = <100>;
             key-positions = <13 14>;
             bindings = <&kp ESC>;
         };
         combo_grave_1_base {
-            timeout-ms = <50>;
+            timeout-ms = <100>;
             key-positions = <0 1>;
-            bindings = <&sl BASE>;
+            bindings = <&to BASE>;
         };
         combo_grave_2_lower {
-            timeout-ms = <50>;
+            timeout-ms = <100>;
             key-positions = <0 2>;
-            bindings = <&sl LOWER>;
+            bindings = <&to LOWER>;
         };
         combo_grave_3_raise {
-            timeout-ms = <50>;
+            timeout-ms = <100>;
             key-positions = <0 3>;
-            bindings = <&sl RAISE>;
+            bindings = <&to RAISE>;
         };
         combo_grave_4_adjust {
-            timeout-ms = <50>;
+            timeout-ms = <100>;
             key-positions = <0 4>;
-            bindings = <&sl ADJUST>;
+            bindings = <&to ADJUST>;
         };
     };
 
