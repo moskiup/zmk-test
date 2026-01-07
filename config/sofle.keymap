@@ -27,25 +27,7 @@
         };
     };
 
-    macros {
-         macro_copy: macro_copy {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(C)>;
-        };
 
-         macro_paste: macro_paste {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(V)>;
-        };
-
-         macro_cut: macro_cut {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(X)>;
-        };
-    };
 
 
     behaviors {
@@ -60,58 +42,6 @@
             #sensor-binding-cells = <0>;
             bindings = <&kp UP>, <&kp DOWN>;
         };
-
-         c_copy: c_copy {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&macro_copy>, <&kp C>;
-        };
-
-         v_paste: v_paste {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&macro_paste>, <&kp V>;
-        };
-
-         x_cut: x_cut {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&macro_cut>, <&kp X>;
-        };
-
-
-
-         n_key: n_key {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp N>, <&kp LS(N)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-         tilde_key: tilde_key {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp SEMI>, <&kp LS(SEMI)>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-         td_n_nye: tap_dance_n_nye {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&n_key>, <&tilde_key>;
-        };
-
-         n_tilde_morph: n_tilde_morph {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp SEMI>, <&kp LS(SEMI)>; // minúscula (ñ) y MAYÚSCULA (Ñ)
-            mods = <(MOD_LSFT|MOD_RSFT)>;         // se activa con Shift izquierdo o derecho
-        };
-
     };
 
     combos {
