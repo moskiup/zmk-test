@@ -57,29 +57,6 @@
             bindings = <&to ADJUST>;
         };
 
-        combo_copy {
-            timeout-ms = <300>;
-            key-positions = <39 39>;
-            bindings = <&kp LC(C)>;
-        };
-
-        combo_paste {
-            timeout-ms = <300>;
-            key-positions = <40 40>;
-            bindings = <&kp LC(C)>;
-        };
-
-        combo_cut {
-            timeout-ms = <300>;
-            key-positions = <38 38>;
-            bindings = <&kp LC(C)>;
-        };
-
-        combo_delete {
-            timeout-ms = <300>;
-            key-positions = <27 27>;
-            bindings = <&kp LS(DEL)>;
-        };
     };
 
 
@@ -123,8 +100,15 @@
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 42 48 49 50 51 52 53>;
             hold-trigger-on-release;
         };
-    };
 
+         td_copy: tap_dance_copy {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>; // Tiempo máximo entre pulsaciones
+            bindings = <&kp C>, <&kp LC(C)>; // 1 toque = C, 2 toques = Ctrl+C
+        };
+    };
+    
     keymap {
         compatible = "zmk,keymap";
 
