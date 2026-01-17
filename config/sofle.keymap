@@ -146,7 +146,7 @@
             bindings = <
 &kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &none
 &kp ESC   &kp Q  &kp W    &kp E    &kp R     &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &kp BSPC
-&kp TAB   &hml LC(A)  &hml LC(S)  &hml LS(DEL)   &hml LCTRL F  &kp G         &kp H   &hmr RCTRL J     &hmr RSHIFT K     &hmr RALT L &hmr RGUI SEMI &kp SQT
+&kp TAB   &hml LCTRL A  &hml LCTRL S   &hml LSHFT DEL   &hml LCTRL F  &kp G         &kp H   &hmr RCTRL J     &hmr RSHIFT K     &hmr RALT L &hmr RGUI SEMI &kp SQT
 &kp LSHIFT &kp Z  &td_cut    &td_copy    &td_paste     &kp B           &kp C &kp V     &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &caps_word
                  &kp LGUI &kp LALT &kp LCTRL &mo LOWER  &kp SPACE    &kp RET  &mo RAISE  &sk RCTRL &kp RALT  &kp RGUI
             >;
